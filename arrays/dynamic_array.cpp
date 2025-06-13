@@ -76,7 +76,7 @@ public:
 
     void insert(int index, int newElement) {
         if (index > length){
-            cout << "Oops! The index you entered doesnt exist.";
+            cout << "Oops! The index you entered doesnt exist." << endl;
             return;
         }
         else{
@@ -90,7 +90,7 @@ public:
     void deleting(int index){
         index--;
         if ( index > length){
-            cout << "Oops! The index you entered doesnt exist.";
+            cout << "Oops! The index you entered doesnt exist." << endl;
             return;
         }
         for (int i=index; i<length; i++){
@@ -128,9 +128,12 @@ public:
         int j=i;
 
         for (i=0; i<other.getLength(); i++){
-            array[j++] = other.array[i];
-            length++;
+            if (j < size){
+                array[j++] = other.array[i];
+            }
         }
+        
+        length = j;
     }
 };
 
@@ -152,7 +155,7 @@ int main(){
         char again;
 
         cout << "\n----- Dynamic Array Operations -----" <<endl<<endl;
-        cout << "1- Appand.      5- Enlarge.\n2- Insert.      6- Merge.\n3- Erase.       7- Get Size.\n4- Search.      8- Get Length.\n";
+        cout << "1- Appand.      5- Enlarge.\n2- Insert.      6- Merge.\n3- Delete.      7- Get Size.\n4- Search.      8- Get Length.\n";
         cout << "Operation : ";
         cin >> choice;
 
