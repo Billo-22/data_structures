@@ -46,3 +46,21 @@ I'm always open to constructive feedback, ideas, or suggestions to improve this 
 If you notice any issues, have feature requests, or want to share your thoughts — feel free to open an issue or contact me directly.
 
 Your insights are appreciated and help make this project better!
+
+## ⚠️ Project Status  
+
+This project is still **in progress**. I'm actively working on adding new structures and improving existing ones.  
+
+**Completed**:  
+- [x] Arrays
+      
+**In Progress**:  
+- [ ] Linked Lists  
+
+**Upcoming**:  
+- [ ] Trees (AVL, B-Tree)
+- [ ] Graph Algorithms  
+- [ ] Hash Tables  
+
+Stay tuned for updates! 🌟
+
