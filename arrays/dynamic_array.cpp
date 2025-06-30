@@ -155,7 +155,7 @@ int main(){
         char again;
 
         cout << "\n----- Dynamic Array Operations -----" <<endl<<endl;
-        cout << "1- Appand.      5- Enlarge.\n2- Insert.      6- Merge.\n3- Delete.      7- Get Size.\n4- Search.      8- Get Length.\n";
+        cout << "1- Append.      5- Enlarge.\n2- Insert.      6- Merge.\n3- Delete.      7- Get Size.\n4- Search.      8- Get Length.\n";
         cout << "Operation : ";
         cin >> choice;
 
