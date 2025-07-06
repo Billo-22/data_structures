@@ -8,7 +8,6 @@ public:
 };
 
 class LinkedList {
-
     
 public:
     Node* head;
@@ -16,18 +15,35 @@ public:
     LinkedList() {           
         head = NULL;
     }
+    //! Destructor
+    ~LinkedList(){
+        Node* temp = head;
+        while(temp != NULL){
+            Node* next = temp->next;
+            delete temp;
+            temp = next;
+        }
+    }
 
-    void pushFront(int element) {         
+    bool isEmpty(){
+        if (head == NULL){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    void insertHead(int element) {         
         Node* node = new Node;
         node->data = element;
         node->next = head;
         head = node;
-
     }
 
-    void pushBack(int element){                              //? Insert at Tail
+    void insertTail(int element){                             
         if (head == NULL){
-            pushFront(element);
+            insertHead(element);
             return;
         }
         Node* node = new Node;
@@ -42,13 +58,8 @@ public:
     }
 
     void insertBefore(int before,int element) {
-        if (!search(before)){
-            cout <<"Couldnt find"<<endl;
-            return;
-        }
-
         if (head == NULL || head->data == before){
-            pushFront(element);
+            insertHead(element);
             return;
         }
 
@@ -56,11 +67,78 @@ public:
         node->data = element;
 
         Node* temp = head;
-        while(temp != NULL && temp->next->data != before){
+        while(temp->next != NULL && temp->next->data != before){
             temp = temp->next;
         }
+
+        if (temp->next == NULL){
+            cout << "Couldnt find" << endl;
+            delete node;
+            return;
+        }
+        
         node->next = temp->next;
         temp->next = node;
+    }
+
+    void deleteHead(){
+        if (head == NULL){
+            cout <<"The list is empty."<<endl;
+            return;
+        }
+
+        Node* delptr = head;
+        head = head->next;
+        delete delptr;
+    }
+
+    void deleteTail(){
+        if (head == NULL){
+            cout <<"The list is empty."<<endl;
+            return;
+        }
+        //?  if the list had only one node.
+        if (head->next == NULL){
+            deleteHead();
+            return;
+        }
+
+        Node* delptr;
+        Node* temp = head;
+        while(temp->next->next != NULL){
+            temp = temp->next;
+        }
+        delptr = temp->next;
+        temp->next = NULL;
+        delete delptr;
+    }
+
+    void deleteElement(int element){
+        if (head == NULL){
+            cout <<"The list is empty."<<endl;
+            return;
+        }
+
+        if (head->data == element){
+            deleteHead();
+            return;
+        }
+
+        Node* temp = head;
+        while(temp->next != NULL && temp->next->data != element){
+            temp = temp->next;
+        }
+
+        if (temp->next == NULL){
+            cout << "Couldnt find" << endl;
+            return;
+        }
+
+        Node* delptr = temp->next;
+        temp->next = delptr->next;
+        delete delptr;
+
+
     }
 
     void display() {
@@ -89,13 +167,12 @@ public:
         bool found = false;
 
         while (temp != NULL){
+            counter++;
             if(temp->data == key){
-                counter++;
                 found = true;
                 cout <<"found it at node number "<< counter <<endl;
             }
             temp = temp->next;
-            counter++;
         }
         if (!found){
             cout <<"Couldnt find"<<endl;
@@ -111,13 +188,11 @@ int main (){
     int before;
     LinkedList obj;
 
-
     while (true){
         int choice;
         char again;
 
-        
-        cout << "\n----- Dynamic Array Operations -----" <<endl<<endl;
+        cout << "\n----- Linked List Operations -----" <<endl<<endl;
         cout << "1- Insert at Tail.      5- Delete Head.\n2- Insert Before.       6- Delete Tail.\n3- Insert At Head.      7- Delete specific element.\n4- Search.              8- Count.\n";
         cout << "Operation : ";
         cin >> choice;
@@ -126,13 +201,13 @@ int main (){
         if (choice == 1){
             cout << "Enter the element : ";
             cin >> element;
-            obj.pushBack(element);
+            obj.insertTail(element);
             cout << "...... List after inserting at tail ......"<<endl;
             obj.display();
         }
         //! ----- INSERTING BEFORE OPERATION -----
         else if (choice == 2){
-            cout << "Before which node you wanna insrt your element : ";
+            cout << "Before which element you wanna insrt your new element : ";
             cin >> before;
             cout << "Enter the element : ";
             cin >> element;
@@ -144,7 +219,7 @@ int main (){
         else if (choice == 3){
             cout << "Enter the element : ";
             cin >> element;
-            obj.pushFront(element);
+            obj.insertHead(element);
             cout << "...... List after inserting at head ......"<<endl;
             obj.display();
         }
@@ -156,19 +231,39 @@ int main (){
         }
         //! ----- DELETING HEAD OPERATION -----
         else if (choice == 5){
-            cout << obj.count();
+            obj.deleteHead();
+
+            if (!obj.isEmpty()){
+                cout << "...... List after deleting the head ......"<<endl;
+                obj.display();
+            }
         }
         //! ----- DELETING TAIL OPERATION -----
         else if (choice == 6){
+            obj.deleteTail();
+            if (!obj.isEmpty()){
+                cout << "...... List after deleting the tail ......"<<endl;
+                obj.display();
+            }
             
         }
         //! ----- DELETING SPECIFIC ELEMENT OPERATION -----
         else if (choice == 7){
+            cout << "Enter the element you wanna delete : ";
+            cin >> element;
+            obj.deleteElement(element);
+            if (!obj.isEmpty()){
+                cout << "...... List after deleting the element ......"<<endl;
+                obj.display();
+            }
             
         }
         //! ----- COUNTING OPERATION -----
         else if (choice == 8){
-            obj.count();
+           cout <<"The list has "<< obj.count() <<" nodes." << endl;
+        }
+        else{
+            cout <<"Invalid choice. Please try again." <<endl;
         }
 
         //! ----- LOOP CONTROL -----
@@ -181,7 +276,7 @@ int main (){
             break;
         }
     }
-    cout << "Have a nice day then .";
+    cout << "Have a nice day then ." << endl;
 
     
     return 0;
