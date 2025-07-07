@@ -26,7 +26,7 @@ I aimed to make my code as readable and understandable as possible for beginners
 This repository serves both as:
 1. A **learning resource** for students studying data structures.
 2. A **reference** for implementing data structures in C++ for real-world applications or technical interviews.
-3. Practice and organize what I’m learning in data structures and programming.
+3. **Practice and organize** what I’m learning in data structures and programming.
 
 ## 🗂️ Structure For Now
 
