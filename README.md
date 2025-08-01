@@ -40,6 +40,9 @@ data-structures/
 ├── stacks/
 │ └── stack_using_array.cpp
 │ └── stack_using_linked_list.cpp
+├── queues/
+│ └── queue_using_array.cpp
+│ └── queue_using_linked_list.cpp
 
 ## 🤔 Feedback & Suggestions
 
@@ -54,9 +57,11 @@ This project is still **in progress**. I'm actively working on adding new struct
 
 **Completed**:  
 - [x] Arrays
+- [x] Linked Lists
       
 **In Progress**:  
-- [ ] Linked Lists  
+- [ ] Stacks
+- [ ] Queues
 
 **Upcoming**:  
 - [ ] Trees (AVL, B-Tree)
