@@ -30,6 +30,8 @@ This repository serves both as:
 
 ## 🗂️ Structure For Now
 
+```
+
 data-structures/
 │
 ├── arrays/
@@ -43,6 +45,8 @@ data-structures/
 ├── queues/
 │ └── queue_using_array.cpp
 │ └── queue_using_linked_list.cpp
+
+```
 
 ## 🤔 Feedback & Suggestions
 
