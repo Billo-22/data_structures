@@ -26,8 +26,11 @@ I aimed to make my code as readable and understandable as possible for beginners
 This repository serves both as:
 1. A **learning resource** for students studying data structures.
 2. A **reference** for implementing data structures in C++ for real-world applications or technical interviews.
+3. **Practice and organize** what I’m learning in data structures and programming.
 
 ## 🗂️ Structure For Now
+
+```
 
 data-structures/
 │
@@ -39,6 +42,11 @@ data-structures/
 ├── stacks/
 │ └── stack_using_array.cpp
 │ └── stack_using_linked_list.cpp
+├── queues/
+│ └── queue_using_array.cpp
+│ └── queue_using_linked_list.cpp
+
+```
 
 ## 🤔 Feedback & Suggestions
 
@@ -53,9 +61,11 @@ This project is still **in progress**. I'm actively working on adding new struct
 
 **Completed**:  
 - [x] Arrays
+- [x] Linked Lists
       
 **In Progress**:  
-- [ ] Linked Lists  
+- [ ] Stacks
+- [ ] Queues
 
 **Upcoming**:  
 - [ ] Trees (AVL, B-Tree)
