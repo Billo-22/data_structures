@@ -48,10 +48,6 @@ public:
     }
 
     int peek(){
-        if (isEmpty()){
-            cout << "The stack is empty."<<endl;
-            return -1;
-        }
         return top->data;
     }
 
@@ -134,6 +130,11 @@ int main(){
         else if (choice == 3){
             if (!obj.isEmpty()){
                 cout << "The current Top elemnt is "<< obj.peek() <<endl;
+            }
+
+            else {
+                cout << "The stack is empty."<<endl;
+                return -1;
             }
         }
 
