@@ -26,9 +26,8 @@ public:
         if (head == NULL){
             return true;
         }
-        else{
-            return false;
-        }
+    
+        return false;
     }
 
     void enqueue(int element){

@@ -23,9 +23,8 @@ public:
         if (top == NULL){
             return true;
         }
-        else{
-            return false;
-        }
+        
+        return false;
     }
 
     void push(int element){
