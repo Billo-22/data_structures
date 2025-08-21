@@ -28,15 +28,15 @@ public:
             return;
         }
         else{
-            for (int i = 0; i < numberofElements; i++){
-                cout << i + 1 << ". Element : ";
+            for (int i=0; i<numberofElements; i++){
+                cout << i+1 << ". Element : ";
                 cin >> array[i];
                 length++;
             }
         }
     }
     void display(){
-        for (int i = 0; i < length; i++){
+        for (int i=0; i<length; i++){
             cout << array[i] << " ";
         }
         cout << endl << endl;
@@ -51,7 +51,7 @@ public:
     }
     void search(int key){
         bool found = false;
-        for (int i = 0; i < length; i++){
+        for (int i=0; i<length; i++){
             if (array[i] == key){
                 cout << "found at position " << i+1 <<" (index : "<< i <<")" <<endl;
                 found = true;
@@ -80,8 +80,8 @@ public:
             return;
         }
         else{
-            for (int i = length; i > index; i--){
-                array[i] = array[i - 1];
+            for (int i=length; i>index; i--){
+                array[i] = array[i-1];
             }
             array[index] = newElement;
             length++;
@@ -150,7 +150,7 @@ int main(){
     Array obj(arrSize);
     obj.fill();
 
-    while (true){
+    while(true){
         int choice;
         char again;
 
