@@ -151,7 +151,6 @@ int main(){
             }
             else {
                 cout << "The stack is empty."<<endl;
-                return -1;
             }
         }
 
