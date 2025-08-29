@@ -62,9 +62,9 @@ This project is still **in progress**. I'm actively working on adding new struct
 **Completed**:  
 - [x] Arrays
 - [x] Linked Lists
-      
+- [x] Stacks
+
 **In Progress**:  
-- [ ] Stacks
 - [ ] Queues
 
 **Upcoming**:  
