@@ -89,7 +89,7 @@ public:
         delete delptr;
     }
 
-    int peekFront(){
+    int getFront(){
         if (isEmpty()){
             cout <<"The Queue is empty."<<endl;
             return -1;
@@ -98,7 +98,7 @@ public:
         return front->data;
     }
 
-    int peekRear(){
+    int getRear(){
         if (isEmpty()){
             cout <<"The Queue is empty."<<endl;
             return -1;
@@ -210,7 +210,7 @@ int main(){
         //! ----- PEEK FRONT OPERATION -----
         else if (choice == 5){
             if (!obj.isEmpty()){
-                cout << "The current Front elemnt is "<< obj.peekFront() <<endl;
+                cout << "The current Front elemnt is "<< obj.getFront() <<endl;
             }
             else {
                 cout << "The Queue is empty."<<endl;
@@ -220,7 +220,7 @@ int main(){
         //! ----- PEEK REAR OPERATION -----
         else if (choice == 6){
             if (!obj.isEmpty()){
-                cout << "The current Rear elemnt is "<< obj.peekRear() <<endl;
+                cout << "The current Rear elemnt is "<< obj.getRear() <<endl;
             }
             else {
                 cout << "The Queue is empty."<<endl;
