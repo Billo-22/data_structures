@@ -43,7 +43,7 @@ data-structures/
 │ └── stack_using_array.cpp
 │ └── stack_using_linked_list.cpp
 ├── queues/
-│ └── queue_using_array.cpp
+│ └── deque_using_linked_list.cpp
 │ └── queue_using_linked_list.cpp
 
 ```
@@ -63,12 +63,12 @@ This project is still **in progress**. I'm actively working on adding new struct
 - [x] Arrays
 - [x] Linked Lists
 - [x] Stacks
+- [x] Queues
 
 **In Progress**:  
-- [ ] Queues
+- [ ] Trees (AVL, B-Tree)
 
 **Upcoming**:  
-- [ ] Trees (AVL, B-Tree)
 - [ ] Graph Algorithms  
 - [ ] Hash Tables  
 
