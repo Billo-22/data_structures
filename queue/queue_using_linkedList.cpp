@@ -8,22 +8,22 @@ public:
 };
 
 class Queue{
-    Node* head;
-    Node* tail;
+    Node* front;
+    Node* rear;
 public:
    
     Queue(){
-        head = tail = NULL;
+        front = rear = NULL;
     }
      
     ~Queue(){
-        while(head != NULL){
+        while(front != NULL){
             dequeue();
         }
     }
 
     bool isEmpty(){
-        if (head == NULL){
+        if (front == NULL){
             return true;
         }
     
@@ -36,12 +36,12 @@ public:
         node->next = NULL;
 
         if (isEmpty()){
-            head = tail = node;
+            front = rear = node;
         }
 
         else{
-            tail->next = node;
-            tail = node;
+            rear->next = node;
+            rear = node;
         }
     }  
 
@@ -51,8 +51,8 @@ public:
             return;
         }
 
-        Node* delptr = head;
-        head = head->next;
+        Node* delptr = front;
+        front = front->next;
         delete delptr;
     }
 
@@ -62,11 +62,11 @@ public:
             return -1;
         }
 
-        return head->data;
+        return front->data;
     }
 
     int count(){
-        Node* temp = head;
+        Node* temp = front;
         int counter = 0;
 
         while(temp != NULL){
@@ -78,7 +78,7 @@ public:
     }
 
     void search(int key){
-        Node* temp = head;
+        Node* temp = front;
         bool found = false;
         int counter = 1;
         
@@ -96,13 +96,13 @@ public:
     }
     
     void clear(){
-        while(head != NULL){
+        while(front != NULL){
             dequeue();
         }
     }
 
     void display(){
-        Node* temp = head;
+        Node* temp = front;
         while(temp != NULL){
             cout << temp->data << " ";
             temp = temp->next;
@@ -120,26 +120,26 @@ int main(){
         int choice;
         char again;
 
-        cout << "\n----- Queue Using List Operations -----" <<endl<<endl;
-        cout << "1- Inserting at Tail.     4- Search.\n2- Delete Head.           5- Count.\n3- Current Head.          6- Clear The Queue.\n\n";
+        cout << "\n----- Queue Using Linked List Operations -----" <<endl<<endl;
+        cout << "1- Inserting at Rear.     4- Search.\n2- Delete Front.           5- Count.\n3- Current Front.          6- Clear The Queue.\n\n";
         cout << "Operation : ";
         cin >> choice;
 
-        //! ----- INSERTIN AT TAIL OPERATION -----
+        //! ----- INSERTIN AT REAR OPERATION -----
         if (choice == 1){
             cout << "Enter the element : ";
             cin >> element;
             obj.enqueue(element);
-            cout << "...... Queue after inserting at the tail ......"<<endl;
+            cout << "...... Queue after inserting at the rear ......"<<endl;
             obj.display();
         }
 
-        //! ----- DELETING HEAD OPERATION -----
+        //! ----- DELETING FRONT OPERATION -----
         else if (choice == 2){
             obj.dequeue();
 
             if (!obj.isEmpty()){
-                cout << "...... Queue after deleting the head ......"<<endl;
+                cout << "...... Queue after deleting front ......"<<endl;
                 obj.display();
             }
         }
@@ -147,10 +147,10 @@ int main(){
         //! ----- PEEK OPERATION -----
         else if (choice == 3){
             if (!obj.isEmpty()){
-                cout << "The current Head elemnt is "<< obj.peek() <<endl;
+                cout << "The current front elemnt is "<< obj.peek() <<endl;
             }
             else {
-                cout << "The stack is empty."<<endl;
+                cout << "The Queue is empty."<<endl;
             }
         }
 
